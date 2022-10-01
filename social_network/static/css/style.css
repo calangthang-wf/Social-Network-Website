@@ -642,7 +642,7 @@ header.sticky {
 /*--- topbar ---*/
 
 .topbar {
-    background: #fff;
+    background: rgb(233, 169, 181);
     display: block;
     height: 60px;
     padding: 0 48px;
@@ -690,7 +690,7 @@ header.sticky {
 }
 
 .top-area>ul>li>a {
-    color: #999;
+    color: #000000;
 }
 
 .top-area .user-img {
@@ -1991,7 +1991,7 @@ li.post-comment .comet-avatar {
 
 #people-list {
     margin-top: 20px;
-    max-height: 450px;
+    max-height: 600px;
     position: relative;
 }
 
@@ -2296,17 +2296,17 @@ footer .logo {
 }
 
 .followers {
-    max-height: 260px;
+    max-height: 400px;
     position: relative;
 }
 
 .followers>li figure {
     display: inline-block;
     margin-bottom: 0;
-    max-width: 45px;
-    min-width: 45px;
+    max-width: 50px;
+    min-width: 50px;
     vertical-align: middle;
-    width: 45px;
+    width: 50px;
 }
 
 .friend-meta {
@@ -4754,7 +4754,7 @@ canvas {
 }
 
 .top-area>ul.main-menu>li>ul li a:hover {
-    background: #f5f5f5 none repeat scroll 0 0;
+    background: #fabac6;
     padding-left: 17px;
 }
 
