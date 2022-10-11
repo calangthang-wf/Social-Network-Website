@@ -1,4 +1,5 @@
 
+from operator import attrgetter
 from tkinter import Widget
 from django import forms
 from .models import Post_content
@@ -36,3 +37,21 @@ class RegistrationForm(forms.ModelForm):
             }
         )
     )
+    
+    email = forms.EmailField(
+        widge= forms.EmailField(
+            attrs = {
+                "class": "email"
+            }
+        )
+    )
+    
+    
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs= {
+                "class": "password"
+            }
+        )
+    )
+    
