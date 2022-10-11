@@ -26,8 +26,8 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post_content
         fields = ('content','image',)
-        
-        
+    
+
 class RegistrationForm(forms.ModelForm):
     username = forms.CharField(
         max_length=30,
@@ -54,4 +54,3 @@ class RegistrationForm(forms.ModelForm):
             }
         )
     )
-    
