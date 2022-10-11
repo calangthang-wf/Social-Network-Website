@@ -1353,6 +1353,8 @@ form button {
     padding: 3px 10px;
 }
 
+
+
 .attachments .fileContainer [type="file"] {
     right: 6px;
     top: -18px;
@@ -10136,3 +10138,5 @@ aside.sidebar.full-style {
         visibility: hidden;
     }
 }
+
+

@@ -17,7 +17,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('content', models.TextField(max_length=5000)),
-                ('time_create', models.DateTimeField(default=datetime.datetime(2022, 10, 2, 2, 55, 10, 519797))),
                 ('image', models.ImageField(upload_to='')),
             ],
         ),
