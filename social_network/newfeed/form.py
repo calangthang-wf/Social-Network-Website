@@ -1,8 +1,10 @@
 
 from operator import attrgetter
 from tkinter import Widget
+from unicodedata import name
 from django import forms
-from .models import Post_content
+from .models import Post_content, Post_comment
+from django.contrib.auth.models import User
 
 class PostForm(forms.ModelForm):
     content = forms.CharField(
@@ -23,34 +25,10 @@ class PostForm(forms.ModelForm):
         )
     )
     
+    
     class Meta:
         model = Post_content
         fields = ('content','image',)
     
+    
 
-class RegistrationForm(forms.ModelForm):
-    username = forms.CharField(
-        max_length=30,
-        widget=forms.widgets.Textarea(
-            attrs={
-                "class": "username"
-            }
-        )
-    )
-    
-    email = forms.EmailField(
-        widge= forms.EmailField(
-            attrs = {
-                "class": "email"
-            }
-        )
-    )
-    
-    
-    password = forms.CharField(
-        widget=forms.PasswordInput(
-            attrs= {
-                "class": "password"
-            }
-        )
-    )

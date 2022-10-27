@@ -498,7 +498,7 @@ header.sticky {
 }
 
 .land-featurearea {
-    background: #1fb6ff none repeat scroll 0 0;
+    background: #e9a9b5 none repeat scroll 0 0;
     color: #fff;
     float: left;
     height: 100vh;
@@ -542,7 +542,7 @@ header.sticky {
 
 .friend-logo>span::before,
 .friend-logo>span::after {
-    background: #0a98dc none repeat scroll 0 0;
+    background: #ea637c none repeat scroll 0 0;
     border: 16px solid rgba(255, 255, 255, 0.1);
     border-radius: 100%;
     content: "";
@@ -1352,8 +1352,6 @@ form button {
     font-weight: 600;
     padding: 3px 10px;
 }
-
-
 
 .attachments .fileContainer [type="file"] {
     right: 6px;
@@ -10138,5 +10136,3 @@ aside.sidebar.full-style {
         visibility: hidden;
     }
 }
-
-

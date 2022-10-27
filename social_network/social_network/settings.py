@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'author',
     'django_bootstrap_icons',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,9 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'landing_page',
     'newfeed',
+    'user',
 ]
 
 MIDDLEWARE = [
+    'author.middlewares.AuthorDefaultBackendMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_currentuser.middleware.ThreadLocalUserMiddleware',  # using djangocurrentuser package 
 ]
 
 ROOT_URLCONF = 'social_network.urls'
@@ -76,20 +80,23 @@ WSGI_APPLICATION = 'social_network.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
+# connect mysql to django
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'social_network',  
-        'USER': 'root',  
-        'PASSWORD': 'Calangthang@ak14',  
-        'HOST': '127.0.0.1',  
-        'PORT': '3306',  
+        'USER': 'root',    # enter your username in mysql
+        'PASSWORD': 'Calangthang@ak14',  # enter your password in mysql 
+        'HOST': '127.0.0.1',   #enter your local host adress in mysql server
+        'PORT': '3306',  #enter your port in mysql server
         'OPTIONS': {  
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  # escalates warnings into errors when data are truncated upon insertion
         }  
     }  
-}  
+} 
 
+# data is generated at models.py
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
