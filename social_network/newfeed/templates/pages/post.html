@@ -1,0 +1,64 @@
+{% extends 'pages/base.html' %}
+{% block title%}  {% endblock %}
+
+{% block content %}
+
+<div class="col-lg-6">
+    <div class="loadMore">
+        <div class="central-meta item">
+            <div class="new-postbox">
+                <figure>
+                    <img src="images/resources/admin2.jpg" alt="">
+                </figure>
+                <div class="newpst-input">
+                    <h1>CREATE POST</h1>
+                    <form action="{% url "newfeed:savePost" %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        {{ f.content }}
+                        <div class="attachments" >
+                            <ul>
+                                <li> 
+                                    <i class="fa fa-image"></i>
+                                    <label class="fileContainer">
+                                        {{ f.image }}
+                                    </label>
+                                </li>
+                                <li>
+                                    <button type="submit">Publish</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- add post new box --> 
+        {% for post in posts %}
+        <div class="central-meta item">
+            <div class="user-post">
+                <div class="friend-info">
+                    <figure>
+                        <img src="/media/Ca.png" alt="">
+                    </figure>
+                    <div class="friend-name">
+                        <ins><a href="time-line.html" title="">User Name</a></ins>
+                        <span>time create</span>
+                    </div>
+                    <div class="post-meta">
+                        <p> {{post.content}} </P>
+                        <img src="{{ post.image.url }}" alt="">
+                        
+                        <div class="description">
+                            
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

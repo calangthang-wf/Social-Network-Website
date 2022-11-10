@@ -1,0 +1,2 @@
+Django==3.2.16
+django_currentuser==0.5.3
