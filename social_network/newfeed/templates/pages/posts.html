@@ -1,7 +1,9 @@
 {% extends 'pages/base.html' %}
-{% block title%} NewFeed {% endblock %}
+{% block title%} ICE CREAM {% endblock %}
 
 {% block content %}
+
+{% for post in posts_page %}
 
 <div class="col-lg-6">
     <!-- add post new box -->
@@ -17,7 +19,7 @@
             </div>
         </div>
 
-        {% for post in posts %}
+        
         <div class="central-meta item">
             <div class="user-post">
                 <div class="friend-info">
@@ -29,16 +31,12 @@
                         <span>{{post.time_create}}</span>
                     </div>
                     <div class="post-meta">
-                        <a href="{% url 'newfeed:posts' post.id %}">
-                            <p> {{post.content}} </P>
-                        </a>
-                        <a href="{% url 'newfeed:posts' post.id %}">
-                            {% if post.image %}
-                            <img src="{{ post.image.url}}" alt="">
-                            {% else %}
-                            <img src="" alt="">
-                            {% endif %}
-                        </a>
+                        <p> {{post.content}} </P>
+                        {% if post.image %}
+                        <img src="{{ post.image.url}}" alt="">
+                        {% else %}
+                        <img src="" alt="">
+                        {% endif %}
                         
                         <div class="description">
                             
@@ -203,9 +201,9 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-        
     </div>
 </div>
+
+{% endfor %}
 
 {% endblock %}

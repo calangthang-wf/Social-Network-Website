@@ -15,8 +15,12 @@ from .form import PostForm
 
 #show post
 def newfeed(request):
-    data = { "posts": Post_content.objects.all().order_by('-time_create')}# get all post from database
+    data = {"posts": Post_content.objects.all().order_by('-time_create')}# get all post from database
     return render(request, 'pages/new_feed.html', data)
+
+def posts(request, pk):
+    posts = {"posts_page": Post_content.objects.filter(pk=pk)}
+    return render(request, "pages/posts.html", posts)
     
 #creat post
 def add_Post(request):

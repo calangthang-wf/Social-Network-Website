@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'reset_migrations',
     'author',
     'django_bootstrap_icons',
     'django.contrib.admin',
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'social_network.wsgi.application'
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'social_network',  
+        'NAME': 'social_db',  
         'USER': 'root',    # enter your username in mysql
         'PASSWORD': 'Calangthang@ak14',  # enter your password in mysql 
         'HOST': '127.0.0.1',   #enter your local host adress in mysql server

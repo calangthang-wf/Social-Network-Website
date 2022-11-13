@@ -11,4 +11,5 @@ urlpatterns = [
     path('add/', views.add_Post, name="addPost"),
     path('save/', views.save_Post, name="savePost"),
     path('404/', views.error, name='cocl'),
+    path('<int:pk>/', views.posts, name='posts'),
 ]

@@ -23,6 +23,7 @@ class Post_content(models.Model):
     
 # create database for comment
 class Post_comment(models.Model):
+    post = models.ForeignKey(Post_content, on_delete=models.CASCADE)
     user_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, default=get_current_user)
     user_comment = models.CharField(max_length=10000, blank=False, null=False)
     image_comment = models.ImageField(upload_to = "comment", blank=True)

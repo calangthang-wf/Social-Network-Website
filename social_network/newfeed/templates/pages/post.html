@@ -33,32 +33,6 @@
                 </div>
             </div>
         </div><!-- add post new box --> 
-        {% for post in posts %}
-        <div class="central-meta item">
-            <div class="user-post">
-                <div class="friend-info">
-                    <figure>
-                        <img src="/media/Ca.png" alt="">
-                    </figure>
-                    <div class="friend-name">
-                        <ins><a href="time-line.html" title="">User Name</a></ins>
-                        <span>time create</span>
-                    </div>
-                    <div class="post-meta">
-                        <p> {{post.content}} </P>
-                        <img src="{{ post.image.url }}" alt="">
-                        
-                        <div class="description">
-                            
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}
