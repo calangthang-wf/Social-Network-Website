@@ -11,7 +11,7 @@ from django.http import HttpResponse
 from django.views.generic.edit import CreateView
 
 from .models import Post_content, Post_comment
-from .form import PostForm
+from .form import PostForm, CommentForm
 
 #show post
 def newfeed(request):
@@ -19,8 +19,14 @@ def newfeed(request):
     return render(request, 'pages/new_feed.html', data)
 
 def posts(request, pk):
-    posts = {"posts_page": Post_content.objects.filter(pk=pk)}
-    return render(request, "pages/posts.html", posts)
+    posts = Post_content.objects.filter(pk=pk)
+    form = CommentForm()
+    if request.method == "POST":
+        form = CommentForm(request.POST, request.FILES, username=request.user, post=posts)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    return render(request, "pages/posts.html", {"posts": posts, "form": form})
     
 #creat post
 def add_Post(request):

@@ -29,6 +29,21 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post_content
         fields = ('content','image',)
+        
+class CommentForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.user_name = kwargs.pop('user_name', None)
+        self.post = kwargs.pop('post', None)
+        super().__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        comment = super().save(commit=False)
+        comment.user_name = self.user_name
+        comment.post = self.post
+        comment.save()
+    class Meta:
+        model = Post_comment
+        fields = ["user_comment", "image_comment"]
     
     
 

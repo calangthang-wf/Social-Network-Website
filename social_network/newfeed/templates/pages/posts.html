@@ -3,7 +3,7 @@
 
 {% block content %}
 
-{% for post in posts_page %}
+{% for post in posts %}
 
 <div class="col-lg-6">
     <!-- add post new box -->
@@ -108,7 +108,9 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="coment-area">
+                    {% for comment in form %}
                     <ul class="we-comet">
                         <li>
                             <div class="comet-avatar">
@@ -116,11 +118,11 @@
                             </div>
                             <div class="we-comment">
                                 <div class="coment-head">
-                                    <h5><a href="time-line.html" title="">Cá Hihi</a></h5>
-                                    <span>1 days ago</span>
+                                    <h5><a href="time-line.html" title="">{{comment.user_name}}</a></h5>
+                                    <span>{{comment.time_comment}}</span>
                                     <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
                                 </div>
-                                <p>cc</p>
+                                <p>{{comment.user_comment}}</p>
                             </div>
                             <ul>
                                 <li>
@@ -198,7 +200,9 @@
                             </div>
                         </li>
                     </ul>
+                    {% endfor %}
                 </div>
+                
             </div>
         </div>
     </div>

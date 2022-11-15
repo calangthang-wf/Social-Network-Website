@@ -29,9 +29,6 @@ class Post_comment(models.Model):
     image_comment = models.ImageField(upload_to = "comment", blank=True)
     time_comment = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self):
-        return self.user_name
-    
     
 
     
